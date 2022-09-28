@@ -6,7 +6,6 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 100%;
   background-size: cover;
   font-family: sans-serif;
 }
@@ -14,13 +13,14 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
-  margin: 0 0 15px 0;
+  margin-top: 20px;
   text-transform: uppercase;
 }
 #displayMeal img {
   display: flex;
   justify-content: center;
   max-width: 300px;
+  margin:  auto;
   border: 3px;
   border-radius: 25px;
 }
@@ -32,8 +32,9 @@ body {
   padding: 0;
 }
 #displayMeal button{
-	display: flex;
-	align-items: flex-end;
-	height:  20px;
-	width:  40px;
+	height:  40px;
+	width:  80px;
+	border-radius: 5px;
+	font-size: 15px;
+	color: red;
 }

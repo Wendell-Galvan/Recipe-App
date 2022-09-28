@@ -5,19 +5,7 @@
 
 
 // const displayMeal = document.getElementById('displayMeal');
-const mealURL = 'https://www.themealdb.com/api/json/v1/1/random.php';
-
-// fetch(mealURL)
-//      .then(response => response.json()) 
-//      .then(responseJson => {
-
-//          console.log(responseJson)
-//           //Display facts on page
-//           // for (let { strMeal } of response) {
-//           //      console.log(strMeal);
-//           // }
-
-//      })
+let mealURL = 'https://www.themealdb.com/api/json/v1/1/random.php';
 
 
 fetch(mealURL)
@@ -85,14 +73,21 @@ fetch(mealURL)
      //Link to Youtube
      const vidBtn = document.createElement("button");
      vidBtn.setAttribute('id', 'button');
-     vidBtn.innerhtml = "Youtube";
+     vidBtn.textContent = "Youtube";
      mealDiv.appendChild(vidBtn);
 
+     const mealVid = meal.strYoutube;
 
      document.getElementById("button").addEventListener("click", youtubeLink);
      function youtubeLink (){
-          const mealVid = meal.strYoutube;
-          location.href = mealVid.src;
+          // const mealVid = meal.strYoutube;
+          location.href = mealVid;
      }
+
+  }
+
+  //New recipe button
+  function newRecipe(){
+     location.reload();
   }
 
