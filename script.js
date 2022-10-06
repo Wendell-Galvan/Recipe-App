@@ -1,28 +1,10 @@
-// axios.get('https://www.themealdb.com/api/json/v1/1/random.php')
-//      .then(response => {
-//            console.log(response);	
-//         })
-
-
-// const displayMeal = document.getElementById('displayMeal');
 let mealURL = 'https://www.themealdb.com/api/json/v1/1/random.php';
 
-
-fetch(mealURL)
+axios.get(mealURL)
   .then((response) => {
-    if (response.ok) {
-      return response.json();
-    } else {
-      throw new Error("NETWORK RESPONSE ERROR");
-    }
-  })
-  .then(data => {
-    console.log(data);
-    displayMeal(data)
-  })
-  .catch((error) => console.error("FETCH ERROR:", error));
-
-
+      console.log(response.data.meals[0]);
+      displayMeal(response.data);
+     })
 
   function displayMeal(data){
      const meal = data.meals[0];
@@ -87,7 +69,16 @@ fetch(mealURL)
   }
 
   //New recipe button
-  function newRecipe(){
-     location.reload();
-  }
+
+    function newRecipe(){
+     document.getElementById("displayMeal").innerHTML = "";
+     console.log("clicked");
+
+     axios.get(mealURL)
+       .then((response) => {
+           console.log(response.data.meals[0]);
+           displayMeal(response.data);
+          });
+
+}
 
